@@ -20,7 +20,7 @@ const Intro = () => {
   useEffect(() => {
     if (inView && Date.now() - lastClick > 1000)
       dispatch(changeHeaderState({ value: "Home" }));
-  }, [inView, dispatch]);
+  }, [inView, dispatch, lastClick]);
 
   return (
     <section
