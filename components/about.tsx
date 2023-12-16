@@ -16,7 +16,7 @@ const About = () => {
   useEffect(() => {
     if (inView && Date.now() - lastClick > 1000)
       dispatch(changeHeaderState({ value: "About" }));
-  }, [inView]);
+  }, [inView, lastClick]);
 
   return (
     <motion.section

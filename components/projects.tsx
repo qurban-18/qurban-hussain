@@ -19,7 +19,7 @@ const Projects = () => {
   useEffect(() => {
     if (inView && Date.now() - lastClick > 1000)
       dispatch(changeHeaderState({ value: "Projects" }));
-  }, [inView]);
+  }, [inView, lastClick]);
 
   return (
     <section
