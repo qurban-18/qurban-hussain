@@ -47,8 +47,8 @@ const About = () => {
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        cricket, video games, and watching movies. I also love{" "}
+        <span className="italic">When I&apos;m not coding</span>, I enjoy
+        playing cricket, video games, and watching movies. I also love{" "}
         <span className="font-medium">learning new things</span>. I am currently
         learning about <span className="font-medium">history</span>.
       </p>
