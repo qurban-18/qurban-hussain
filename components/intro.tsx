@@ -11,16 +11,16 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { changeHeaderState } from "@/redux/features/activeHeader.slice";
 
 const Intro = () => {
-  const lastClick = useAppSelector(
-    (state) => state.activeHeader.timeOfLastClick || 0
-  );
   const { ref, inView } = useInView({ threshold: 0.6 });
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const lastClick = useAppSelector(
+      (state) => state.activeHeader.timeOfLastClick || 0
+    );
     if (inView && Date.now() - lastClick > 1000)
       dispatch(changeHeaderState({ value: "Home" }));
-  }, [inView, lastClick]);
+  }, [inView]);
 
   return (
     <section
