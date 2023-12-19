@@ -35,28 +35,36 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "MERN Stack Development Course Completion",
+    location: "Lahore, Pakistan",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I proudly completed a rigorous 1-year MERN Stack Development course at VVork Cloud Technologies. This immersive program has honed my skills in the full-stack development landscape, preparing me for the dynamic challenges of the tech industry.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2021",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Junior Instructor",
+    location: "Lahore, Pakistan",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "After completing a year-long MERN Stack Development course with VVork Cloud Technologies, I was hired as a Junior Instructor, blending my newly acquired skills with the opportunity to guide others in their learning journey.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2022",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "MERN Stack Developer at AI Networks",
+    location: "Lahore, Pakistan",
     description:
-      "I&apos;m now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I&apos;m open to full-time opportunities.",
+      "I took on the role of MERN Stack Developer at AI Networks, engaging in impactful projects during a 3-month contract. This experience allowed me to contribute to the dynamic field of web development within the innovative environment of AI Networks.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2022",
+  },
+  {
+    title: "MERN Stack Developer at Craftoo",
+    location: "Lahore, Pakistan",
+    description:
+      "Currently based in Craftoo, I am actively contributing as a MERN Stack Developer. Excited to be part of a dynamic team, I am engaged in crafting innovative solutions and enhancing my skills in the ever-evolving world of web development.",
+    icon: React.createElement(FaReact),
+    date: "2023 - present",
   },
 ] as const;
 
@@ -94,14 +102,12 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
   "PostgreSQL",
-  "Python",
-  "Django",
   "Framer Motion",
+  "Sass",
+  "Bootstrap",
+  "Vite",
 ] as const;

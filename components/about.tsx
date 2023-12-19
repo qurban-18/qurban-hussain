@@ -5,18 +5,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { changeHeaderState } from "@/redux/features/activeHeader.slice";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
-  const lastClick = useAppSelector(
-    (state) => state.activeHeader.timeOfLastClick || 0
-  );
-  const { ref, inView } = useInView({ threshold: 0.75 });
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClick > 1000)
-      dispatch(changeHeaderState({ value: "About" }));
-  }, [inView, lastClick]);
+  const { ref } = useSectionInView("About");
 
   return (
     <motion.section

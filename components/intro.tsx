@@ -1,26 +1,15 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-import { useInView } from "react-intersection-observer";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { changeHeaderState } from "@/redux/features/activeHeader.slice";
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
-  const lastClick = useAppSelector(
-    (state) => state.activeHeader.timeOfLastClick || 0
-  );
-  const { ref, inView } = useInView({ threshold: 0.6 });
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClick > 1000)
-      dispatch(changeHeaderState({ value: "Home" }));
-  }, [inView, dispatch, lastClick]);
+  const { ref } = useSectionInView("Home");
 
   return (
     <section

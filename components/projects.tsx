@@ -8,23 +8,15 @@ import Project from "./project";
 import { useInView } from "react-intersection-observer";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { changeHeaderState } from "@/redux/features/activeHeader.slice";
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
-  const lastClick = useAppSelector(
-    (state) => state.activeHeader.timeOfLastClick || 0
-  );
-  const { ref, inView } = useInView({ threshold: 0.3 });
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if (inView && Date.now() - lastClick > 1000)
-      dispatch(changeHeaderState({ value: "Projects" }));
-  }, [inView, lastClick]);
+  const { ref } = useSectionInView("Projects", 0.3);
 
   return (
     <section
       ref={ref}
-      className="mb-28 max-w-[45rem] scroll-mt-28"
+      className="mb-28 w-full max-w-[45rem] scroll-mt-28 mx-auto"
       id="projects"
     >
       <SectionHeading>My Projects</SectionHeading>
