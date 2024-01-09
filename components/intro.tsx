@@ -7,6 +7,7 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { changeHeaderState } from "@/redux/features/activeHeader.slice";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home");
@@ -75,28 +76,31 @@ const Intro = () => {
         <Link
           href={"#contact"}
           className="group bg-gray-900  text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:bg-gray-950 active:scale-95 transition"
+          onClick={() =>
+            changeHeaderState({ value: "Contact", timeOfLastClick: Date.now() })
+          }
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
-        <Link
+        <a
           href={"/CV.pdf"}
           download={true}
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 active:scale-105 transition border border-black/10"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 active:scale-105 transition borderBlack"
         >
-          Contact me here{" "}
+          Download Resume{" "}
           <HiDownload className="opacity-70 group-hover:translate-y-1 transition" />
-        </Link>
+        </a>
         <Link
           href={"https://www.linkedin.com"}
-          className="group bg-white p-4 text-gray-500 flex items-center gap-2 rounded-full hover:text-sky-600 transition border border-black/10"
+          className="group bg-white p-4 text-gray-500 flex items-center gap-2 rounded-full hover:text-sky-600 transition borderBlack"
           target="_blank"
         >
           <BsLinkedin className="group-hover:scale-110 transition" />
         </Link>
         <Link
           href={"https://www.linkedin.com"}
-          className="group bg-white p-4 text-gray-500 text-[1.25rem] flex items-center gap-2 rounded-full hover:text-gray-950 transition border border-black/10"
+          className="group bg-white p-4 text-gray-500 text-[1.25rem] flex items-center gap-2 rounded-full hover:text-gray-950 transition borderBlack"
           target="_blank"
         >
           <FaGithubSquare className="group-hover:scale-110 transition" />
